@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "fa4b4ea7-cf33-4dab-bc4d-bf1857748111",
+		"name": "Authors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22762957"
+	},
+	"item": [
+		{
+			"name": "GET Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check Status\",function()\r",
+							"{\r",
+							" pm.expect(pm.response.status).to.contain(\"OK\");\r",
+							"}\r",
+							")\r",
+							"pm.test(\"check response code\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"check id\", function ()\r",
+							"{\r",
+							"    pm.expect(pm.response.json()[0].id).to.equal(1);\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"check idBook\", function ()\r",
+							"{\r",
+							"    pm.expect(pm.response.json()[0].idBook).to.equal(1);\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"check firstName\", function ()\r",
+							"{\r",
+							"    pm.expect(pm.response.json()[0].firstName).to.contain(\"First Name 1\");\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"check Last Name\", function ()\r",
+							"{\r",
+							"    pm.expect(pm.response.json()[0].lastName).to.contain(\"Last Name 1\");\r",
+							"}\r",
+							")\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check Status\",function()\r",
+							"{\r",
+							" pm.expect(pm.response.status).to.contain(\"OK\");\r",
+							"}\r",
+							")\r",
+							"pm.test(\"check response code\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"}\r",
+							")\r",
+							"pm.test(\"check rejester is done successfully \",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.status).to.contain(\"OK\");\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"}\r",
+							")\r",
+							"\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Check firstname should't be empty\",function()\r",
+							"{\r",
+							"    pm.expect(jsonData.firstName).not.equal(null);\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"Check lastname should't be empty\",function()\r",
+							"{\r",
+							"    pm.expect(jsonData.lastName).not.equal(null);\r",
+							"}\r",
+							")\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"idBook\": 1,\r\n    \"firstName\": \"waleed\",\r\n    \"lastName\": \"gomma\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Searching idBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check Status\",function()\r",
+							"{\r",
+							" pm.expect(pm.response.status).to.contain(\"OK\");\r",
+							"}\r",
+							")\r",
+							"pm.test(\"check response code\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"}\r",
+							")\r",
+							"var jsonData= pm.response.json();\r",
+							"pm.test(\"Searching with valid idBook should return relative data\",function()\r",
+							"{\r",
+							"    pm.expect(jsonData[0].idBook).to.equal(1);\r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						"authors",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updates data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check Status\",function()\r",
+							"{\r",
+							" pm.expect(pm.response.status).to.contain(\"OK\");\r",
+							"}\r",
+							")\r",
+							"pm.test(\"check response code\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"}\r",
+							")\r",
+							"var jsonData =pm.response.json();\r",
+							"pm.test(\"check new firstname updated successfully \",function()\r",
+							"{\r",
+							"  pm.expect(jsonData.firstName).to.contain(\"new first name\");\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"check new lastname updated successfully \",function()\r",
+							"{\r",
+							"  pm.expect(jsonData.lastName).to.contain(\"new last name\");\r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"idBook\": 1,\r\n  \"firstName\": \"new first name \",\r\n  \"lastName\": \"new last name\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Updated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check Status\",function()\r",
+							"{\r",
+							" pm.expect(pm.response.status).to.contain(\"OK\");\r",
+							"}\r",
+							")\r",
+							"pm.test(\"check response code\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"}\r",
+							")\r",
+							"var jsonData =pm.response.json();\r",
+							"pm.test(\"check new firstname updated successfully \",function()\r",
+							"{\r",
+							"  pm.expect(jsonData.firstName).to.contain(\"new first name\");\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"check new lastname updated successfully \",function()\r",
+							"{\r",
+							"  pm.expect(jsonData.lastName).to.contain(\"new last name\");\r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
