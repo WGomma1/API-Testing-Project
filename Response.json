@@ -1,0 +1,102 @@
+"id": "632af219026b460494adc543",
+    "name": "Waleed",
+    "desc": "",
+    "descData": null,
+    "closed": false,
+    "idOrganization": "62873e09e4079a204144b188",
+    "idEnterprise": null,
+    "pinned": false,
+    "url": "https://trello.com/b/7xQKswiH/waleed",
+    "shortUrl": "https://trello.com/b/7xQKswiH",
+    "prefs": {
+        "permissionLevel": "private",
+        "hideVotes": false,
+        "voting": "disabled",
+        "comments": "members",
+        "invitations": "members",
+        "selfJoin": true,
+        "cardCovers": true,
+        "isTemplate": false,
+        "cardAging": "regular",
+        "calendarFeedEnabled": false,
+        "hiddenPluginBoardButtons": [],
+        "switcherViews": [
+            {
+                "_id": "632af219026b460494adc544",
+                "viewType": "Board",
+                "enabled": true
+            },
+            {
+                "_id": "632af219026b460494adc545",
+                "viewType": "Table",
+                "enabled": true
+            },
+            {
+                "_id": "632af219026b460494adc546",
+                "viewType": "Calendar",
+                "enabled": false
+            },
+            {
+                "_id": "632af219026b460494adc547",
+                "viewType": "Dashboard",
+                "enabled": false
+            },
+            {
+                "_id": "632af219026b460494adc548",
+                "viewType": "Timeline",
+                "enabled": false
+            },
+            {
+                "_id": "632af219026b460494adc549",
+                "viewType": "Map",
+                "enabled": false
+            }
+        ],
+        "background": "blue",
+        "backgroundColor": "#0079BF",
+        "backgroundImage": null,
+        "backgroundImageScaled": null,
+        "backgroundTile": false,
+        "backgroundBrightness": "dark",
+        "backgroundBottomColor": "#0079BF",
+        "backgroundTopColor": "#0079BF",
+        "canBePublic": true,
+        "canBeEnterprise": true,
+        "canBeOrg": true,
+        "canBePrivate": true,
+        "canInvite": true
+    },
+    "labelNames": {
+        "green": "",
+        "yellow": "",
+        "orange": "",
+        "red": "",
+        "purple": "",
+        "blue": "",
+        "sky": "",
+        "lime": "",
+        "pink": "",
+        "black": "",
+        "green_dark": "",
+        "yellow_dark": "",
+        "orange_dark": "",
+        "red_dark": "",
+        "purple_dark": "",
+        "blue_dark": "",
+        "sky_dark": "",
+        "lime_dark": "",
+        "pink_dark": "",
+        "black_dark": "",
+        "green_light": "",
+        "yellow_light": "",
+        "orange_light": "",
+        "red_light": "",
+        "purple_light": "",
+        "blue_light": "",
+        "sky_light": "",
+        "lime_light": "",
+        "pink_light": "",
+        "black_light": ""
+    },
+    "limits": {}
+}
